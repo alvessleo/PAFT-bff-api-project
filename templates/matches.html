@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Today's matches</h1>
+    <div id="games">
+
+    </div>
+    <script>
+
+
+        function loadTeams() {
+            fetch('http://127.0.0.1:5002/matches')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    console.log(data.nameHomeTeam);
+                    // matches.forEach(data => {
+                    document.getElementById('games').innerHTML = `
+                                                                <div class="game">
+                                                                    <img src='${data.homeCrest}'>
+                                                                    <h3>${data.nameHomeTeam}</h3>
+                                                                    <p>Score: ${data.scoreHomeTeam}</p>
+                                                                    <p>vs</p>
+                                                                    <img src='${data.awayCrest}'>
+                                                                    <h3>${data.nameAwayTeam}</h3>
+                                                                    <p>Score: ${data.scoreAwayTeam}</p>
+
+                                                                </div>`
+                    // });
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+        loadTeams()
+    </script>
+</body>
+</html>

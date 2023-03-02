@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Teams</title>
+    <link rel="stylesheet" href="../static/teams.css">
+</head>
+
+<body>
+    <h1>Confira os atuais times da NBA.</h1>
+
+    <div id="teams">
+        <!-- <div class="team">
+            <img src="">
+            <h3>name</h3>
+            <p>location</p>
+            <div>
+                <p>Veja mais informações em: </p>
+                <p>url</p>
+            </div>
+        </div> -->
+    </div>
+
+    <script>
+
+
+        function loadTeams() {
+            fetch('http://127.0.0.1:5002/nba')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    console.log(data.teamName);
+
+                    console.log(data);
+                    console.log(data.teamName);
+                    document.getElementById('teams').innerHTML = `
+                                                                <div class="team">
+                                                                    <img src="${data.url}">
+                                                                    <h3>${data.teamName}</h3>
+                                                                    <p>Abreviação do time: ${data.abbreviation}</p>
+                                                                    <p>Localizado em: ${data.location}</p>
+                                                                    <div>
+                                                                        <p>Veja mais informações em: </p>
+                                                                        <p>${data.url}</p>
+                                                                    </div>
+                                                                </div>`
+
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+        loadTeams()
+    </script>
+</body>
+</html>
