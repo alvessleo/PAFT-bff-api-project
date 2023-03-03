@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block head %}
+NBA Teams
+{% endblock %}
+{% block body %}
+{% for team in list %}
+    <div class="team">
+        <img src={{team.foto}} >
+        <p>Name: {{team.teamName}}</p>
+        <p>Abreviation: {{team.abbreviation}}</p>
+        <p>Location: {{team.location}}</p>
+        <p>Leia mais em: <a href={{team.url}}>{{team.url}}</a></p>
+    </div>
+{% endfor %}
+{% endblock %}
