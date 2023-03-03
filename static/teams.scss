@@ -1,17 +1,33 @@
-ul{
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1 0 100px;
+*{
     margin: 0;
-    li{
-        list-style: none;
+    padding: 0;
+}
+
+body{
+    margin: 2em;
+}
+
+#teams{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .team{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        margin: 0 2em 2em 0;
+        height: fit-content;
+        max-width: 320px;
+        background-color: rgb(226, 226, 226);
+        flex:  1 0 200px;
+        border-radius: 5px;
+
         img{
-            width: 100px;
+            display: flex;
+            margin: 0 auto;
+            width: 150px;
             object-fit: contain;
         }
+
     }
 }

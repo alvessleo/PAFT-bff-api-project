@@ -9,7 +9,9 @@
 </head>
 
 <body>
-    <h1>Confira os atuais times da NBA.</h1>
+    <h1>Confira um dos atuais times da NBA.</h1>
+    <p>Para ver outro time, clique no botão abaixo.</p>
+    <button onclick="window.location.reload()">Trocar time</button>
 
     <div id="teams">
         <!-- <div class="team">
@@ -43,7 +45,7 @@
                                                                     <p>Localizado em: ${data.location}</p>
                                                                     <div>
                                                                         <p>Veja mais informações em: </p>
-                                                                        <p>${data.url}</p>
+                                                                        <a href="${data.url}"></a>
                                                                     </div>
                                                                 </div>`
 

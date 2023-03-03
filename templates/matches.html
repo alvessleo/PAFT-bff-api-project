@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Today's matches</h1>
+    <h1>Copa Libertadores</h1>
+    <p>Confira o resultado do jogo em tempo real e o clima da região</p>
     <div id="games">
 
     </div>
@@ -21,7 +22,15 @@
                     console.log(data);
                     console.log(data.nameHomeTeam);
                     // matches.forEach(data => {
+                    kelvin = data.weather
+                    conversor = kelvin - 273.15
+                    celsius = conversor.toFixed(1)
                     document.getElementById('games').innerHTML = `
+                                                                <div class="clima">
+                                                                    <p>Clima em Guaiaquil (Equador)</p>
+                                                                    <p>${celsius} Graus celsius</p>
+                                                                    <p>${data.description}</p>
+                                                                </div>
                                                                 <div class="game">
                                                                     <img src='${data.homeCrest}'>
                                                                     <h3>${data.nameHomeTeam}</h3>

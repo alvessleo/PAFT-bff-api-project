@@ -36,7 +36,7 @@ def get_matches():
 
     api_key = '5f527d552e6cbf05eca944e42dc82ddf'
     
-    url_weather = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=' + api_key
+    url_weather = 'https://api.openweathermap.org/data/2.5/weather?q=Guaiaquil&appid=' + api_key
     response = requests.get(url_weather).json()
     # temperatura = response['main']['temp']
     # descricao = response['weather'][0]['description']
@@ -48,7 +48,7 @@ def get_matches():
         'scoreAwayTeam' : respMatches['matches'][0].get('score')['fullTime']['away'],
         'awayCrest' : respMatches['matches'][0].get('awayTeam')['crest'],
         'nameAwayTeam' : respMatches['matches'][0].get('awayTeam')['name'],
-        'weather' : response['main'][0]['temp'],
+        'weather' : response['main']['temp'],
         'description' : response['weather'][0]['description']
     }
     return resp
