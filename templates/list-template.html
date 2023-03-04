@@ -3,13 +3,19 @@
 NBA Teams
 {% endblock %}
 {% block body %}
+
 {% for team in list %}
-    <div class="team">
-        <img src={{team.foto}} >
-        <p>Name: {{team.teamName}}</p>
-        <p>Abreviation: {{team.abbreviation}}</p>
-        <p>Location: {{team.location}}</p>
-        <p>Leia mais em: <a href={{team.url}}>{{team.url}}</a></p>
+    <div class="team" style=background-color:#{{team.color}}>
+        <img src={{team.foto}}>
+        <div class="info">
+            <h3>{{team.teamName}}</h3>
+            <p><span>Abreviação do time:</span> {{team.abbreviation}}</p>
+            <p><span>Localizado em:</span> {{team.location}}</p>
+            <div>
+                <p><span>Veja mais informações em:</span> </p>
+                <a href={{team.url}}>www.nba.com</a>
+            </div>
+        </div>
     </div>
 {% endfor %}
 {% endblock %}

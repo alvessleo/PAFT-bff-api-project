@@ -24,7 +24,8 @@ def teams():
         'abbreviation' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('abbreviation'),
         'location' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('location'),
         'url' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('links')[0].get('href'),
-        'foto' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('logos')[0].get('href')
+        'foto' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('logos')[0].get('href'),
+        'color' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('color')
         }
 
     return respNBA
@@ -68,20 +69,23 @@ def list():
         'abbreviation' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('abbreviation'),
         'location' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('location'),
         'url' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('links')[0].get('href'),
-        'foto' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('logos')[0].get('href')},
+        'foto' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('logos')[0].get('href'),
+        'color' : jsonTeams['sports'][0]['leagues'][0]['teams'][x]['team'].get('color')},
         {
         'teamName' : jsonTeams['sports'][0]['leagues'][0]['teams'][y]['team'].get('displayName'),
         'abbreviation' : jsonTeams['sports'][0]['leagues'][0]['teams'][y]['team'].get('abbreviation'),
         'location' : jsonTeams['sports'][0]['leagues'][0]['teams'][y]['team'].get('location'),
         'url' : jsonTeams['sports'][0]['leagues'][0]['teams'][y]['team'].get('links')[0].get('href'),
-        'foto' : jsonTeams['sports'][0]['leagues'][0]['teams'][y]['team'].get('logos')[0].get('href')
+        'foto' : jsonTeams['sports'][0]['leagues'][0]['teams'][y]['team'].get('logos')[0].get('href'),
+        'color' : jsonTeams['sports'][0]['leagues'][0]['teams'][y]['team'].get('color')
         },
         {
         'teamName' : jsonTeams['sports'][0]['leagues'][0]['teams'][z]['team'].get('displayName'),
         'abbreviation' : jsonTeams['sports'][0]['leagues'][0]['teams'][z]['team'].get('abbreviation'),
         'location' : jsonTeams['sports'][0]['leagues'][0]['teams'][z]['team'].get('location'),
         'url' : jsonTeams['sports'][0]['leagues'][0]['teams'][z]['team'].get('links')[0].get('href'),
-        'foto' : jsonTeams['sports'][0]['leagues'][0]['teams'][z]['team'].get('logos')[0].get('href')
+        'foto' : jsonTeams['sports'][0]['leagues'][0]['teams'][z]['team'].get('logos')[0].get('href'),
+        'color' : jsonTeams['sports'][0]['leagues'][0]['teams'][z]['team'].get('color')
         }]
     return render_template('list-template.html',list=team_list)
 

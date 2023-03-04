@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NBA Teams</title>
     <link rel="stylesheet" href="../static/teams.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,15 +17,19 @@
     <button onclick="window.location.reload()">Trocar time</button>
 
     <div id="teams">
-        <!-- <div class="team">
-            <img src="">
-            <h3>name</h3>
-            <p>location</p>
-            <div>
-                <p>Veja mais informações em: </p>
-                <p>url</p>
+        <!--<div class="team">
+            <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/fb16ce63-59c5-4a8f-8ec7-c1f017fe56b3-profile_image-150x150.png">
+            <div class="info">
+                <h3>${data.teamName}</h3>
+                <p>Abreviação do time: ${data.abbreviation}</p>
+                <p>Localizado em: ${data.location}</p>
+                <div>
+                    <p>Veja mais informações em: </p>
+                    <a href="">dsadasd</a>
+                </div>
             </div>
-        </div> -->
+
+        </div>-->
     </div>
 
     <script>
@@ -38,14 +45,16 @@
                     console.log(data);
                     console.log(data.teamName);
                     document.getElementById('teams').innerHTML = `
-                                                                <div class="team">
+                                                                <div class="team" style="background-color:#${data.color}">
                                                                     <img src="${data.foto}">
-                                                                    <h3>${data.teamName}</h3>
-                                                                    <p>Abreviação do time: ${data.abbreviation}</p>
-                                                                    <p>Localizado em: ${data.location}</p>
-                                                                    <div>
-                                                                        <p>Veja mais informações em: </p>
-                                                                        <a href="${data.url}"></a>
+                                                                    <div class="info">
+                                                                        <h3>${data.teamName}</h3>
+                                                                        <p><span>Abreviação do time:</span> ${data.abbreviation}</p>
+                                                                        <p><span>Localizado em:</span> ${data.location}</p>
+                                                                        <div>
+                                                                            <p><span>Veja mais informações em:</span> </p>
+                                                                            <a href="${data.url}">www.nba.com</a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>`
 
