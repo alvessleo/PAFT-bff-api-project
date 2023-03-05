@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../static/matches/matches.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Copa Libertadores</h1>
@@ -28,18 +32,23 @@
                     document.getElementById('games').innerHTML = `
                                                                 <div class="clima">
                                                                     <p>Clima em Guaiaquil (Equador)</p>
-                                                                    <p>${celsius} Graus celsius</p>
-                                                                    <p>${data.description}</p>
+                                                                    <p><strong>${celsius}° Graus Celsius</strong> - ${data.description}</p>
+                                                                    
                                                                 </div>
                                                                 <div class="game">
-                                                                    <img src='${data.homeCrest}'>
-                                                                    <h3>${data.nameHomeTeam}</h3>
-                                                                    <p>Score: ${data.scoreHomeTeam}</p>
-                                                                    <p>vs</p>
-                                                                    <img src='${data.awayCrest}'>
-                                                                    <h3>${data.nameAwayTeam}</h3>
-                                                                    <p>Score: ${data.scoreAwayTeam}</p>
+                                                                    <div>
+                                                                        <img src='${data.homeCrest}'>
+                                                                        <h3>${data.nameHomeTeam}</h3>
+                                                                        <p>Score: ${data.scoreHomeTeam}</p>
+                                                                    </div>
 
+                                                                    <p class="vs">vs</p>
+
+                                                                    <div>
+                                                                        <img src='${data.awayCrest}'>
+                                                                        <h3>${data.nameAwayTeam}</h3>
+                                                                        <p>Score: ${data.scoreAwayTeam}</p>
+                                                                    </div>
                                                                 </div>`
                     // });
                 })
